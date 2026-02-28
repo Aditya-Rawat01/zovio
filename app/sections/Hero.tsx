@@ -25,10 +25,10 @@ export default function Hero() {
                 />
             </div>
 
-            <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-8">
+            <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-8 py-16 lg:py-0">
                 <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
                     {/* Left Content */}
-                    <div>
+                    <div className="text-center lg:text-left flex flex-col items-center lg:items-start">
                         {/* Top Label */}
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
@@ -71,7 +71,7 @@ export default function Hero() {
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.6 }}
-                            className="flex flex-col sm:flex-row items-start gap-4"
+                            className="flex flex-col sm:flex-row items-center lg:items-start gap-4"
                         >
                             <motion.a
                                 href="#contact"
@@ -96,7 +96,7 @@ export default function Hero() {
                             initial={{ opacity: 0, y: 40 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.8 }}
-                            className="mt-16 pt-8 border-t border-border grid grid-cols-3 gap-6 max-w-lg"
+                            className="mt-12 lg:mt-16 pt-8 border-t border-border grid grid-cols-3 gap-4 sm:gap-6 max-w-lg w-full"
                         >
                             {[
                                 { value: "150+", label: "Projects delivered" },
@@ -152,7 +152,7 @@ export default function Hero() {
                                             initial={{ height: 0 }}
                                             animate={{ height: `${height}%` }}
                                             transition={{ duration: 0.8, delay: 1 + i * 0.1 }}
-                                            className="flex-1 bg-accent/20 hover:bg-accent/40 transition-colors"
+                                            className="flex-1 bg-accent/90 hover:bg-accent/40 transition-colors"
                                         />
                                     ))}
                                 </div>
@@ -205,7 +205,7 @@ export default function Hero() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.5 }}
-                className="absolute bottom-8 left-6 lg:left-8"
+                className="hidden sm:block absolute bottom-8 left-6 lg:left-8"
             >
                 <div className="flex items-center gap-3">
                     <motion.div
