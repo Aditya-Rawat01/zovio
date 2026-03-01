@@ -47,7 +47,7 @@ export default function FAQ() {
   };
 
   return (
-    <section id="faq" ref={ref} className="relative py-32 overflow-hidden">
+    <section id="faq" ref={ref} className="relative py-24 md:py-32 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-surface/30" />
 
@@ -58,7 +58,7 @@ export default function FAQ() {
             initial={{ opacity: 0, x: -40 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8 }}
-            className="lg:sticky lg:top-32 lg:self-start"
+            className="lg:sticky lg:self-start flex flex-col lg:py-10"
           >
             <motion.span
               initial={{ opacity: 0, y: 20 }}

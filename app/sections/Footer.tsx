@@ -92,7 +92,7 @@ export default function Footer() {
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </motion.a>
               <motion.a
-                href="tel:+1234567890"
+              href="tel:+91 9667128213"
                 className="flex items-center gap-2 px-6 py-3 text-foreground font-medium hover:text-accent transition-colors underline underline-offset-4"
                 whileHover={{ x: 4 }}
               >
@@ -132,11 +132,11 @@ export default function Footer() {
                   <span className="text-sm">hello@zovio.agency</span>
                 </a>
                 <a
-                  href="tel:+1234567890"
+                  href="tel:+919667128213"
                   className="flex items-center gap-3 text-muted hover:text-foreground transition-colors"
                 >
                   <Phone className="w-4 h-4" />
-                  <span className="text-sm">+1 (234) 567-890</span>
+                  <span className="text-sm">+91 9667128213</span>
                 </a>
                 <div className="flex items-center gap-3 text-muted">
                   <MapPin className="w-4 h-4" />

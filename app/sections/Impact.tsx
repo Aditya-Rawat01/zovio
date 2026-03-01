@@ -34,7 +34,7 @@ export default function Impact() {
     <section
       id="impact"
       ref={ref}
-      className="relative py-32 overflow-hidden"
+      className="relative py-24 md:py-32 overflow-hidden"
     >
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section Header */}

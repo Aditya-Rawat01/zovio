@@ -4,7 +4,9 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Sun, Moon } from "lucide-react";
 import { useTheme } from "./ThemeProvider";
-
+import Image from "next/image";
+import logo from "../../public/zovio-nobg.png";
+import logo2 from "../../public/zovio-black-nobg.png";
 const navLinks = [
   { name: "Home", href: "#home" },
   { name: "Impact", href: "#impact" },
@@ -46,7 +48,9 @@ export default function Navbar() {
               className="text-xl font-medium tracking-tight"
               whileHover={{ opacity: 0.7 }}
             >
-              <span className="text-foreground">Zovio</span>
+              <span className="text-foreground">
+                <Image src={theme=="light"?logo:logo2} alt="Zovio" height={120} width={70} className="rounded-sm"/>
+              </span>
             </motion.a>
 
             {/* Desktop Navigation */}

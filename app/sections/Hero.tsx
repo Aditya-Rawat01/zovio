@@ -131,7 +131,7 @@ export default function Hero() {
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.8, delay: 0.6 }}
-                                className="bg-card border border-border p-8 mb-6"
+                                className="bg-card border border-border p-8 mb-6 rounded-md"
                             >
                                 <div className="flex items-center gap-3">
                                     <div className="w-10 h-10 bg-accent/10 flex items-center justify-center">
