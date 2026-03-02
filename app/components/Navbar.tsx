@@ -29,6 +29,20 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+  if (isMobileMenuOpen) {
+    document.body.style.overflow = "hidden";
+    document.body.style.touchAction = "none";
+  } else {
+    document.body.style.overflow = "";
+    document.body.style.touchAction = "";
+  }
+
+  return () => {
+    document.body.style.overflow = "";
+    document.body.style.touchAction = "";
+  };
+}, [isMobileMenuOpen]);
   return (
     <>
       <motion.nav
@@ -141,7 +155,7 @@ export default function Navbar() {
             className="fixed inset-0 z-40 md:hidden"
           >
             <div
-              className="absolute inset-0 bg-background/95 backdrop-blur-xl"
+              className="absolute inset-0 backdrop-blur-xl touch-none"
               onClick={() => setIsMobileMenuOpen(false)}
             />
             <motion.div
@@ -149,7 +163,7 @@ export default function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="absolute right-0 top-0 h-full w-full bg-card border-l border-border p-6 pt-24"
+              className="fixed right-0 top-0 h-dvh w-full bg-card border-l border-border p-6 pt-24 overscroll-none touch-pan-y"
             >
               <div className="flex flex-col gap-4">
                 {navLinks.map((link, index) => (
