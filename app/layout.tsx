@@ -14,9 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Zovio | Digital Agency - SEO & Web Development",
+  title: "Zovio | Digital Agency",
   description: "Zovio is a premium digital agency specializing in SEO optimization, website creation, and building powerful online presence for businesses.",
-  keywords: ["digital agency", "SEO", "web development", "website creation", "online presence", "Zovio"],
+  keywords: ["digital agency", "SEO", "web development", "website creation", "online presence", "Zovio", "Zovio Digital", "Best digital agency", "Digital solutions"],
 };
 
 export default function RootLayout({
