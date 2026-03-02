@@ -3,6 +3,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { ArrowUpRight } from "lucide-react";
+import { Button } from "../components/buttonComponent";
 
 const values = [
   {
@@ -83,16 +84,15 @@ export default function About() {
             </motion.p>
 
             {/* CTA */}
-            <motion.a
-              href="#contact"
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="inline-flex items-center gap-2 text-accent font-medium hover:gap-3 transition-all"
+              
             >
-              Work with us
-              <ArrowUpRight className="w-4 h-4" />
-            </motion.a>
+              <Button className="inline-flex items-center gap-2 text-accent font-medium hover:gap-3 transition-all" name="Work with us" sectionId="contact" children={<ArrowUpRight className="w-4 h-4" />}/>
+              
+            </motion.div>
           </div>
 
           {/* Right Content - Values List */}

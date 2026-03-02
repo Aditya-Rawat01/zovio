@@ -3,6 +3,7 @@
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { useRef, useState } from "react";
 import { Plus, Minus, MessageCircle } from "lucide-react";
+import { Button } from "../components/buttonComponent";
 
 const faqs = [
   {
@@ -102,12 +103,10 @@ export default function FAQ() {
                     Our team is here to help. Get in touch and we&apos;ll get
                     back to you within 24 hours.
                   </p>
-                  <a
-                    href="#contact"
-                    className="text-sm font-semibold text-accent hover:underline"
+                  <div
                   >
-                    Contact Us →
-                  </a>
+                    <Button name="Contact Us →" sectionId="contact" className="text-sm font-semibold text-accent hover:underline"/>
+                  </div>
                 </div>
               </div>
             </motion.div>

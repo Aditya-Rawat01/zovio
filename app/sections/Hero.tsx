@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, TrendingUp, Search, Globe } from "lucide-react";
 import AnimatedCounter from "../components/AnimatedCounter";
+import { Button } from "../components/buttonComponent";
 
 export default function Hero() {
     return (
@@ -17,7 +18,7 @@ export default function Hero() {
 
                 {/* Subtle grid */}
                 <div
-                    className="absolute inset-0 opacity-[0.02]"
+                    className="absolute inset-0 opacity-[0.04]"
                     style={{
                         backgroundImage: `linear-gradient(var(--foreground) 1px, transparent 1px), linear-gradient(90deg, var(--foreground) 1px, transparent 1px)`,
                         backgroundSize: "80px 80px",
@@ -73,22 +74,19 @@ export default function Hero() {
                             transition={{ duration: 0.8, delay: 0.6 }}
                             className="flex flex-col sm:flex-row items-center lg:items-start gap-4"
                         >
-                            <motion.a
-                                href="#contact"
-                                className="group flex items-center gap-3 px-6 py-3 bg-accent text-white font-medium hover:bg-accent-secondary transition-colors rounded-md"
+                            <motion.div
                                 whileHover={{ x: 4 }}
                                 whileTap={{ scale: 0.98 }}
                             >
-                                Start a project
-                                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                            </motion.a>
-                            <motion.a
-                                href="#impact"
+                                
+                                <Button name="Start a project" className="group flex items-center gap-3 px-6 py-3 bg-accent text-white font-medium hover:bg-accent-secondary transition-colors rounded-md" sectionId="contact" children={<ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />}/>
+                            </motion.div>
+                            <motion.div
                                 className="flex items-center gap-2 px-6 py-3 text-foreground font-medium hover:text-accent transition-colors underline underline-offset-4"
                                 whileHover={{ x: 4 }}
                             >
-                                View our work
-                            </motion.a>
+                                <Button name="View our work" className="" sectionId="impact"/>
+                            </motion.div>
                         </motion.div>
 
                         {/* Stats with Animated Counters */}

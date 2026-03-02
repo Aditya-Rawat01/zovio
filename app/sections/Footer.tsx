@@ -12,6 +12,7 @@ import {
   Instagram,
   Github,
 } from "lucide-react";
+import { Button } from "../components/buttonComponent";
 
 const footerLinks = {
   services: [
@@ -22,11 +23,10 @@ const footerLinks = {
     { name: "Digital Marketing", href: "#" },
   ],
   company: [
-    { name: "About Us", href: "#about" },
-    { name: "Our Work", href: "#impact" },
-    { name: "Testimonials", href: "#testimonials" },
-    { name: "Careers", href: "#" },
-    { name: "Blog", href: "#" },
+    { name: "About Us", href: "about" },
+    { name: "Our Work", href: "impact" },
+    { name: "FAQs", href: "faq" },
+    { name: "Testimonials", href: "testimonials" },
   ],
   resources: [
     { name: "Documentation", href: "#" },
@@ -41,7 +41,6 @@ const socialLinks = [
   { icon: Twitter, href: "#", label: "Twitter" },
   { icon: Linkedin, href: "#", label: "LinkedIn" },
   { icon: Instagram, href: "#", label: "Instagram" },
-  { icon: Github, href: "#", label: "GitHub" },
 ];
 
 export default function Footer() {
@@ -178,12 +177,12 @@ export default function Footer() {
               <ul className="space-y-3">
                 {footerLinks.company.map((link) => (
                   <li key={link.name}>
-                    <a
-                      href={link.href}
+                    <div
                       className="text-sm text-muted hover:text-foreground transition-colors"
                     >
-                      {link.name}
-                    </a>
+                      <Button name={link.name} sectionId={link.href} className=""/>
+
+                    </div>
                   </li>
                 ))}
               </ul>
@@ -199,12 +198,11 @@ export default function Footer() {
               <ul className="space-y-3">
                 {footerLinks.resources.map((link) => (
                   <li key={link.name}>
-                    <a
-                      href={link.href}
+                    <div
                       className="text-sm text-muted hover:text-foreground transition-colors"
                     >
-                      {link.name}
-                    </a>
+                      <Button name={link.name} sectionId={link.href} className=""/>
+                    </div>
                   </li>
                 ))}
               </ul>
