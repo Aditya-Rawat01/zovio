@@ -2,6 +2,8 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import Link from "next/link";
+import wa from "@/whatsapp.png";
 import {
   ArrowRight,
   Mail,
@@ -13,6 +15,7 @@ import {
   Github,
 } from "lucide-react";
 import { Button } from "../components/buttonComponent";
+import Image from "next/image";
 
 const footerLinks = {
   services: [
@@ -36,6 +39,12 @@ const footerLinks = {
     { name: "FAQ", href: "#faq" },
   ],
 };
+const phone = "919667128213";
+const message = encodeURIComponent(
+  "Hello, I came from your website and I’m interested in your services.",
+);
+
+const whatsappUrl = `https://wa.me/${phone}?text=${message}`;
 
 const socialLinks = [
   { icon: Twitter, href: "#", label: "Twitter" },
@@ -62,7 +71,9 @@ export default function Footer() {
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight leading-[1.2] mb-6">
               Ready to start your
-              <span className="heading-serif text-accent block mt-2">next project?</span>
+              <span className="heading-serif text-accent block mt-2">
+                next project?
+              </span>
             </h2>
 
             <motion.p
@@ -71,10 +82,9 @@ export default function Footer() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-lg text-muted mb-10 max-w-xl mx-auto"
             >
-              Let&apos;s discuss how we can help you achieve your digital goals. 
+              Let&apos;s discuss how we can help you achieve your digital goals.
               Reach out and we&apos;ll get back to you within 24 hours.
             </motion.p>
-
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -82,7 +92,7 @@ export default function Footer() {
               className="flex flex-col sm:flex-row items-center justify-center gap-4"
             >
               <motion.a
-                href="mailto:hello@zovio.agency"
+                href="mailto:info@zoviodigital.in"
                 className="group flex items-center rounded-md gap-2 px-6 py-3 bg-accent text-white font-medium hover:bg-accent-secondary transition-colors"
                 whileHover={{ x: 4 }}
                 whileTap={{ scale: 0.98 }}
@@ -91,11 +101,29 @@ export default function Footer() {
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </motion.a>
               <motion.a
-              href="tel:+91 9667128213"
+                href="tel:+91 9667128213"
                 className="flex items-center gap-2 px-6 py-3 text-foreground font-medium hover:text-accent transition-colors underline underline-offset-4"
                 whileHover={{ x: 4 }}
               >
                 Schedule a call
+              </motion.a>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="py-6 flex items-center justify-center"
+            >
+              <motion.a
+                href={whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex cursor-pointer items-center justify-center rounded-md gap-2 w-60 py-3 bg-accent text-white font-medium hover:bg-accent-secondary transition-colors"
+                whileHover={{ x: 4 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                Contact on Whatsapp
+                <Image src={wa} alt="whatsapp icon" width={35} />
               </motion.a>
             </motion.div>
           </motion.div>
@@ -113,22 +141,24 @@ export default function Footer() {
               transition={{ duration: 0.6 }}
               className="col-span-2 md:col-span-4 lg:col-span-2"
             >
-              <a href="#home" className="inline-block mb-6">
-                <span className="text-2xl font-medium text-foreground">Zovio</span>
-              </a>
+              <Button sectionId="home" name="" className="inline-block mb-6 cursor-pointer">
+                <span className="text-2xl font-medium text-foreground">
+                  Zovio
+                </span>
+              </Button>
               <p className="text-muted mb-6 max-w-sm leading-relaxed">
-                A digital agency focused on SEO and web development. 
-                We help brands grow through strategic thinking and meticulous craft.
+                A digital agency focused on SEO and web development. We help
+                brands grow through strategic thinking and meticulous craft.
               </p>
 
               {/* Contact Info */}
               <div className="space-y-3">
                 <a
-                  href="mailto:hello@zovio.agency"
+                  href="mailto:info@zoviodigital.in"
                   className="flex items-center gap-3 text-muted hover:text-foreground transition-colors"
                 >
                   <Mail className="w-4 h-4" />
-                  <span className="text-sm">hello@zovio.agency</span>
+                  <span className="text-sm">info@zoviodigital.in</span>
                 </a>
                 <a
                   href="tel:+919667128213"
@@ -139,9 +169,7 @@ export default function Footer() {
                 </a>
                 <div className="flex items-center gap-3 text-muted">
                   <MapPin className="w-4 h-4" />
-                  <span className="text-sm">
-                    San Francisco, CA
-                  </span>
+                  <span className="text-sm">New Delhi, India</span>
                 </div>
               </div>
             </motion.div>
@@ -177,11 +205,12 @@ export default function Footer() {
               <ul className="space-y-3">
                 {footerLinks.company.map((link) => (
                   <li key={link.name}>
-                    <div
-                      className="text-sm text-muted hover:text-foreground transition-colors"
-                    >
-                      <Button name={link.name} sectionId={link.href} className=""/>
-
+                    <div className="text-sm text-muted hover:text-foreground transition-colors">
+                      <Button
+                        name={link.name}
+                        sectionId={link.href}
+                        className=""
+                      />
                     </div>
                   </li>
                 ))}
@@ -198,10 +227,12 @@ export default function Footer() {
               <ul className="space-y-3">
                 {footerLinks.resources.map((link) => (
                   <li key={link.name}>
-                    <div
-                      className="text-sm text-muted hover:text-foreground transition-colors"
-                    >
-                      <Button name={link.name} sectionId={link.href} className=""/>
+                    <div className="text-sm text-muted hover:text-foreground transition-colors">
+                      <Button
+                        name={link.name}
+                        sectionId={link.href}
+                        className=""
+                      />
                     </div>
                   </li>
                 ))}

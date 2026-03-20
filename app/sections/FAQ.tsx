@@ -29,12 +29,12 @@ const faqs = [
   {
     question: "How much does a typical project cost?",
     answer:
-      "Project costs vary based on scope, complexity, and requirements. We offer tailored solutions to fit different budgets. Contact us for a free consultation where we&apos;ll discuss your needs and provide a detailed proposal with transparent pricing.",
+      "Project costs vary based on scope, complexity, and requirements. We offer tailored solutions to fit different budgets. Contact us for a free consultation where we will discuss your needs and provide a detailed proposal with transparent pricing.",
   },
   {
     question: "Can you help with existing websites or only new builds?",
     answer:
-      "We do both! Whether you need a complete redesign, performance optimization, SEO improvements, or new features for your existing site, we can help. We&apos;ll audit your current setup and recommend the best approach for your goals.",
+      "We do both! Whether you need a complete redesign, performance optimization, SEO improvements, or new features for your existing site, we can help. We will audit your current setup and recommend the best approach for your goals.",
   },
 ];
 
