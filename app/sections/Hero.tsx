@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, TrendingUp, Search, Globe } from "lucide-react";
 import AnimatedCounter from "../components/AnimatedCounter";
 import { Button } from "../components/buttonComponent";
+import Link from "next/link";
 
 export default function Hero() {
     return (
@@ -85,7 +86,7 @@ export default function Hero() {
                                 className="flex items-center gap-2 px-6 py-3 text-foreground font-medium hover:text-accent transition-colors underline underline-offset-4"
                                 whileHover={{ x: 4 }}
                             >
-                                <Button name="View our work" className="" sectionId="impact"/>
+                                <Link href={"/portfolio"}> <button className="" >View our work</button></Link>
                             </motion.div>
                         </motion.div>
 
